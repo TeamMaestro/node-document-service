@@ -1,5 +1,5 @@
 {
-  "name": "@teamhive/node-document-service",
+  "name": "@teammaestro/node-document-service",
   "private": false,
   "version": "2.6.0",
   "description": "A TypeScript node.js client that interfaces with the Maestro Document Service",
@@ -12,10 +12,7 @@
     "prepack": "tsc",
     "postpack": "rm *.d.ts && rm *.js && rm -rf interfaces types"
   },
-  "author": "TeamHive",
-  "contributors": [
-    "John Pinkster <jpinkster>"
-  ],
+  "author": "TeamMaestro",
   "repository": {
     "type": "git",
     "url": "https://github.com/TeamMaestro/node-document-service/"
