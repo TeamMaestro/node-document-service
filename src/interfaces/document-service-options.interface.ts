@@ -105,6 +105,13 @@ export namespace DocumentServiceOptions {
         identity: string;
         // The registrationId of the course in scorm engine
         registrationId?: string;
+
+        // the first name of the learner as will be reported to scorm engine
+        learnerFirstName: string;
+        // the last name of the learner as will be reported to scorm engine
+        learnerLastName: string;
+        // the identity of the learner as will be reported to scorm engine
+        learnerIdentity: string;
     }
 
     export interface ContentStatusPayload {

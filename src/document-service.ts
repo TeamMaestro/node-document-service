@@ -101,6 +101,9 @@ export class DocumentService {
 
         const params = this.createQueryString({
             registrationId: payload.registrationId,
+            learnerFirstName: payload.learnerFirstName,
+            learnerLastName: payload.learnerLastName,
+            learnerIdentity: payload.learnerIdentity
         });
 
         return this.request<DocumentServiceResponse.ViewResponse>({
