@@ -136,27 +136,33 @@ export class DocumentService {
    * This method will get the learning standard for a content item
    * @return {Promise<T>}
    */
-  getLearningStandard(payload: any) {
+  getCourseLearningStandard(
+    payload: DocumentServiceOptions.CourseLearningStandardPayload
+  ) {
     if (!payload.identity) {
       throw new Error('Invalid Data');
     }
 
-    return this.request<any>({
-      path: `api/v1/course/${payload.identity}`,
-    });
+    return this.request<DocumentServiceResponse.CourseLearningStandardResponse>(
+      {
+        path: `api/v1/scorm/${payload.identity}`,
+      }
+    );
   }
 
   /**
    * This method will get the xapi statements for a registration
    * @return {Promise<T>}
    */
-  getXApiStatementsForARegistration(payload: any) {
-    if (!payload.courseIdentity || !payload.registrationIdentity) {
+  getXApiStatementsForARegistration(
+    payload: DocumentServiceOptions.XApiStatementsPayload
+  ) {
+    if (!payload.registrationIdentity) {
       throw new Error('Invalid Data');
     }
 
     return this.request<any>({
-      path: `api/v1/course/${payload.courseIdentity}/registration/${payload.registrationIdentity}/xapi-statements`,
+      path: `api/v1/scorm/registration/${payload.registrationIdentity}/xapi-statements`,
     });
   }
 
