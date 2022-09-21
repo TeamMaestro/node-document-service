@@ -83,7 +83,7 @@ export class DocumentService {
    * This method will copy the media with DMS
    * @return {Promise<T>}
    */
-  copy(payload: DocumentServiceOptions.CopyPayload) {
+  copy(payload: DocumentServiceOptions.ContentCopyPayload) {
     if (
       !payload ||
       !payload.sourceContentIdentity ||

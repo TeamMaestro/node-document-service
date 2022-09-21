@@ -55,7 +55,7 @@ export namespace DocumentServiceOptions {
     metadata?: any;
   }
 
-  export interface CopyPayload {
+  export interface ContentCopyPayload {
     //Identity of the source content to copy
     sourceContentIdentity: string;
 
