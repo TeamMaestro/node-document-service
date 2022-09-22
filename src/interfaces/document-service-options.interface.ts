@@ -55,6 +55,29 @@ export namespace DocumentServiceOptions {
     metadata?: any;
   }
 
+  export interface ContentCopyPayload {
+    //Identity of the source content to copy
+    sourceContentIdentity: string;
+
+    // If an identity is provided, the target content will be made with the given identity as its content identity in dms
+    targetContentIdentity?: string;
+
+    //API Key for the target connection
+    targetConnectionApiKey: string;
+
+    // The format to convert the file to
+    convertFormat?: string;
+
+    // If a thumbnail should be generated
+    shouldGenerateThumbnail?: boolean;
+
+    /**
+     * An open metadata field that will be returned on all callback
+     * requests.
+     */
+    metadata?: any;
+  }
+
   export interface WordTemplateRequestPayload {
     /**
      * Identity of the template for the request. This is the identity of a template

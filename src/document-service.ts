@@ -79,6 +79,26 @@ export class DocumentService {
     });
   }
 
+  /**
+   * This method will copy the media with DMS
+   * @return {Promise<T>}
+   */
+  copy(payload: DocumentServiceOptions.ContentCopyPayload) {
+    if (
+      !payload ||
+      !payload.sourceContentIdentity ||
+      !payload.targetConnectionApiKey
+    ) {
+      throw new Error('Invalid Copy Data');
+    }
+
+    return this.request<DocumentServiceResponse.RegistrationResponse>({
+      path: `api/v1/content/${payload.sourceContentIdentity}/copy`,
+      method: 'POST',
+      body: payload,
+    });
+  }
+
   generateMediaFromWordTemplate(
     payload: DocumentServiceOptions.WordTemplateRequestPayload
   ) {
