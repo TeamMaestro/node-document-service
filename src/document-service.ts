@@ -185,6 +185,22 @@ export class DocumentService {
       path: `api/v1/scorm/registration/${payload.registrationIdentity}/xapi-statements`,
     });
   }
+  
+  /**
+   * This method will get the interactions for a registration
+   * @return {Promise<T>}
+   */
+  getInteractionsForARegistration(
+    payload: DocumentServiceOptions.XApiStatementsPayload
+  ) {
+    if (!payload.registrationIdentity) {
+      throw new Error('Invalid Data');
+    }
+
+    return this.request<any>({
+      path: `api/v1/scorm/registration/${payload.registrationIdentity}/interactions`,
+    });
+  }
 
   /**
    * The default request options used with request

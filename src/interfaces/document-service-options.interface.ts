@@ -151,4 +151,9 @@ export namespace DocumentServiceOptions {
     // The identity of the registration to get xapi statements for
     registrationIdentity: string;
   }
+  
+  export interface InteractionsPayload {
+    // The identity of the registration to get interactions for
+    registrationIdentity: string;
+  }
 }
