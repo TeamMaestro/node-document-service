@@ -191,13 +191,13 @@ export class DocumentService {
    * @return {Promise<T>}
    */
   getInteractionsForARegistration(
-    payload: DocumentServiceOptions.XApiStatementsPayload
+    payload: DocumentServiceOptions.InteractionsPayload
   ) {
     if (!payload.registrationIdentity) {
       throw new Error('Invalid Data');
     }
 
-    return this.request<any>({
+    return this.request<DocumentServiceResponse.CourseInteractionsApiResponse>({
       path: `api/v1/scorm/registration/${payload.registrationIdentity}/interactions`,
     });
   }
