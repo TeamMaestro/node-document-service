@@ -57,6 +57,8 @@ export namespace DocumentServiceResponse {
         downloadUrl?: string;
         // The converted content's view response
         convertedContent?: ViewResponse;
+        // the file name of the content
+        filename?: string;
     }
 
     export interface ContentStatusResponse {
